@@ -1,4 +1,5 @@
 Networking Fundamentals
+
 1. Network
 
 A network is a group of connected devices that communicate and share resources.
@@ -120,7 +121,7 @@ ping google.com
 tracert google.com
 nslookup google.com
 arp -a
-Interview Must-Know
+
 
 IP → logical address
 MAC → Layer 2 address
