@@ -1,0 +1,134 @@
+Networking Fundamentals
+1. Network
+
+A network is a group of connected devices that communicate and share resources.
+
+Example: Computers connected in an office.
+
+2. LAN
+
+Local Area Network — covers a small area like a home or office.
+
+3. WAN
+
+Wide Area Network — covers a large geographical area.
+Example: Internet.
+
+4. IP Address
+
+A logical address used to identify a device/interface on a network.
+
+Example: 192.168.1.10
+
+5. MAC Address
+
+A link-layer address associated with a network interface.
+
+Example: 00:1A:2B:3C:4D:5E
+
+6. Private IP
+
+Used inside private networks.
+
+10.0.0.0/8
+172.16.0.0/12
+192.168.0.0/16
+7. Public IP
+
+An address used for communication over the public Internet.
+
+8. Subnet Mask
+
+Identifies the network and host portions of an IPv4 address.
+
+Example: 255.255.255.0 = /24
+
+9. Gateway
+
+The device used to reach another network.
+
+Example: 192.168.1.1
+
+10. DNS
+
+Converts domain names into IP addresses.
+
+google.com → IP address
+11. DHCP
+
+Automatically provides network configuration such as IP, subnet mask, gateway, and DNS.
+
+DORA: Discover → Offer → Request → Acknowledge
+
+12. Router
+
+Connects different networks and forwards packets based on IP addresses.
+
+13. Switch
+
+Connects devices within a LAN and forwards frames using MAC addresses.
+
+14. Firewall
+
+Controls network traffic according to security rules.
+
+15. TCP
+
+Reliable, connection-oriented protocol.
+
+Example: HTTPS, SSH.
+
+16. UDP
+
+Connectionless protocol with lower overhead.
+
+Example: DNS, VoIP, gaming.
+
+17. Important Ports
+Port	Service
+22	SSH
+23	Telnet
+25	SMTP
+53	DNS
+80	HTTP
+443	HTTPS
+3389	RDP
+
+
+18. OSI Layers
+7 Application
+6 Presentation
+5 Session
+4 Transport
+3 Network
+2 Data Link
+1 Physical
+
+Remember: All People Seem To Need Data Processing
+
+19. NAT
+
+Converts/translates IP addresses, commonly allowing private hosts to access the Internet through public addressing.
+
+20. VPN
+
+Creates a secure connection over a public/untrusted network.
+
+21. Important Commands
+ipconfig /all
+ping google.com
+tracert google.com
+nslookup google.com
+arp -a
+Interview Must-Know
+
+IP → logical address
+MAC → Layer 2 address
+Switch → MAC
+Router → IP
+DNS → Name to IP
+DHCP → Automatically gives IP configuration
+TCP → Reliable
+UDP → Fast/low overhead
+Gateway → Exit to another network
+Firewall → Controls traffic
