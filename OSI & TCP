@@ -1,0 +1,1124 @@
+# OSI & TCP/IP Models
+
+## 1. Introduction
+
+The **OSI Model** and **TCP/IP Model** are networking reference models used to understand how data travels from one device to another over a network.
+
+They divide network communication into different layers. Each layer has a specific responsibility and works with the layers above and below it.
+
+The two important models are:
+
+* **OSI Model** — 7 layers
+* **TCP/IP Model** — 4 layers
+
+---
+
+# 2. OSI Model
+
+OSI stands for **Open Systems Interconnection**.
+
+It was developed by the **International Organization for Standardization (ISO)** to provide a standard framework for understanding network communication.
+
+The OSI model has **7 layers**:
+
+| Layer | Name         | Main Responsibility                  | Data Unit        |
+| ----- | ------------ | ------------------------------------ | ---------------- |
+| 7     | Application  | Network services for applications    | Data             |
+| 6     | Presentation | Translation, encryption, compression | Data             |
+| 5     | Session      | Establish/manage/terminate sessions  | Data             |
+| 4     | Transport    | End-to-end delivery                  | Segment/Datagram |
+| 3     | Network      | Logical addressing and routing       | Packet           |
+| 2     | Data Link    | MAC addressing and frames            | Frame            |
+| 1     | Physical     | Transmission of bits                 | Bits             |
+
+### Easy way to remember
+
+From Layer 7 → Layer 1:
+
+**A P S T N D P**
+
+> All People Seem To Need Data Processing
+
+From Layer 1 → Layer 7:
+
+**P D N T S P A**
+
+> Please Do Not Throw Sausage Pizza Away
+
+---
+
+# 3. Layer 7 — Application Layer
+
+## Definition
+
+The Application Layer is the **top layer of the OSI model**.
+
+It provides network services directly to applications used by users.
+
+It does not mean applications themselves are Layer 7. Instead, it provides network-related services that applications use.
+
+## Functions
+
+* Provides network services to applications
+* Allows applications to communicate over the network
+* Supports services such as web browsing, email and file transfer
+* Identifies available communication services
+
+## Common Protocols
+
+* HTTP
+* HTTPS
+* FTP
+* SMTP
+* DNS
+* DHCP
+* SSH
+* Telnet
+* SNMP
+
+## Examples
+
+When you open:
+
+`https://example.com`
+
+Your browser uses application-layer protocols such as **HTTPS** to communicate with the web server.
+
+## Troubleshooting
+
+If a website is not opening:
+
+* Check whether the application is working
+* Check DNS resolution
+* Check whether the required port is accessible
+* Check HTTP/HTTPS connectivity
+
+---
+
+# 4. Layer 6 — Presentation Layer
+
+## Definition
+
+The Presentation Layer is responsible for how data is **formatted, translated, encrypted and compressed**.
+
+It ensures that data sent by one system can be understood by another system.
+
+## Functions
+
+### 1. Data Translation
+
+Converts data between different formats.
+
+Example:
+
+ASCII ↔ EBCDIC
+
+### 2. Encryption/Decryption
+
+Provides data encryption and decryption.
+
+Example:
+
+TLS is commonly associated with the security of application communication, although modern protocol stacks don't always map neatly to one OSI layer.
+
+### 3. Compression/Decompression
+
+Reduces the size of data before transmission.
+
+## Examples
+
+* Data encoding
+* Encryption
+* Compression
+* Character conversion
+
+## Troubleshooting
+
+Possible issues include:
+
+* Encryption/certificate problems
+* Incorrect data format
+* Compression/decompression problems
+
+---
+
+# 5. Layer 5 — Session Layer
+
+## Definition
+
+The Session Layer establishes, manages and terminates communication sessions between applications.
+
+## Functions
+
+* Establishes sessions
+* Maintains sessions
+* Terminates sessions
+* Provides synchronization
+* Helps recover communication after interruptions
+
+## Example
+
+Suppose two systems establish a communication session.
+
+The Session Layer conceptually manages:
+
+```text
+Session Start
+     ↓
+Data Exchange
+     ↓
+Session Management
+     ↓
+Session End
+```
+
+## Troubleshooting
+
+Possible symptoms:
+
+* Session disconnects
+* Connection repeatedly drops
+* Application session cannot be maintained
+
+---
+
+# 6. Layer 4 — Transport Layer
+
+## Definition
+
+The Transport Layer provides **end-to-end communication** between devices.
+
+It is responsible for reliable or fast delivery depending on the protocol being used.
+
+## Main Protocols
+
+### TCP
+
+TCP is:
+
+* Connection-oriented
+* Reliable
+* Ordered
+* Error-controlled
+* Flow-controlled
+
+Example:
+
+```text
+Client → TCP Connection → Server
+```
+
+TCP uses a **three-way handshake**:
+
+```text
+Client                Server
+
+  SYN  -------------->
+       <-------------- SYN-ACK
+  ACK  --------------->
+```
+
+### UDP
+
+UDP is:
+
+* Connectionless
+* Faster
+* Lightweight
+* Does not guarantee delivery
+* Does not guarantee ordering
+
+Examples:
+
+* DNS queries
+* VoIP
+* Online gaming
+* Streaming applications
+
+## Functions
+
+* Segmentation
+* Reassembly
+* Reliability
+* Flow control
+* Error control
+* Port addressing
+
+## Important Ports
+
+| Protocol |  Port |
+| -------- | ----: |
+| HTTP     |    80 |
+| HTTPS    |   443 |
+| SSH      |    22 |
+| FTP      |    21 |
+| SMTP     |    25 |
+| DNS      |    53 |
+| DHCP     | 67/68 |
+| Telnet   |    23 |
+| RDP      |  3389 |
+
+## Data Unit
+
+* TCP → Segment
+* UDP → Datagram
+
+## Troubleshooting
+
+If an application cannot connect:
+
+```text
+Check:
+Application
+   ↓
+Port
+   ↓
+Firewall
+   ↓
+TCP/UDP connectivity
+```
+
+Useful commands:
+
+```bash
+telnet server-ip 443
+```
+
+or:
+
+```bash
+Test-NetConnection server-ip -Port 443
+```
+
+---
+
+# 7. Layer 3 — Network Layer
+
+## Definition
+
+The Network Layer is responsible for **logical addressing and routing**.
+
+The main addressing system is the **IP address**.
+
+## Functions
+
+* Logical addressing
+* Routing
+* Packet forwarding
+* Path selection
+* Connecting different networks
+
+## Main Protocols
+
+* IPv4
+* IPv6
+* ICMP
+* IPsec
+
+## Devices
+
+* Router
+* Layer 3 Switch
+
+## Example
+
+Suppose:
+
+```text
+PC A
+192.168.1.10
+
+      ↓
+
+Router
+
+      ↓
+
+192.168.2.20
+PC B
+```
+
+The router determines how the packet should travel from one network to another.
+
+## Data Unit
+
+**Packet**
+
+## Important Concepts
+
+* IP address
+* Subnet mask
+* Default gateway
+* Routing table
+* CIDR
+* Network ID
+* Host ID
+
+## Troubleshooting
+
+Useful commands:
+
+```cmd
+ipconfig /all
+```
+
+Check:
+
+* IP address
+* Subnet mask
+* Default gateway
+* DNS server
+
+Test connectivity:
+
+```cmd
+ping 192.168.1.1
+```
+
+Check route:
+
+```cmd
+tracert google.com
+```
+
+---
+
+# 8. Layer 2 — Data Link Layer
+
+## Definition
+
+The Data Link Layer provides communication between devices on the **same local network**.
+
+It uses **MAC addresses** for local delivery.
+
+## Functions
+
+* MAC addressing
+* Frame creation
+* Error detection
+* Media access control
+* Switching
+* VLAN-related communication
+
+## Sublayers
+
+The Data Link Layer is commonly divided into:
+
+### LLC
+
+Logical Link Control
+
+### MAC
+
+Media Access Control
+
+## Devices
+
+* Switch
+* Bridge
+* Network Interface Card
+
+## Protocols/Technologies
+
+* Ethernet
+* Wi-Fi
+* ARP is commonly discussed alongside Layer 2/Layer 3 interaction
+
+## Data Unit
+
+**Frame**
+
+## MAC Address
+
+A MAC address identifies a network interface at the data-link level.
+
+Example:
+
+```text
+00-1A-2B-3C-4D-5E
+```
+
+## Switch Working
+
+A switch learns MAC addresses and stores them in its MAC address table.
+
+Example:
+
+```text
+MAC Address       Port
+
+AA:AA:AA:AA:AA:AA   1
+BB:BB:BB:BB:BB:BB   2
+```
+
+When a frame arrives, the switch checks its MAC address table and forwards the frame toward the appropriate port.
+
+## Troubleshooting
+
+Check the MAC/ARP information:
+
+```cmd
+arp -a
+```
+
+Check:
+
+* Cable
+* Switch port
+* NIC
+* VLAN
+* MAC address
+* Duplex/speed issues
+
+---
+
+# 9. Layer 1 — Physical Layer
+
+## Definition
+
+The Physical Layer is responsible for transmitting **raw bits** over a physical medium.
+
+## Functions
+
+* Transmits bits
+* Defines electrical/optical/radio signals
+* Defines connectors and physical media
+* Defines transmission characteristics
+
+## Examples
+
+* Ethernet cables
+* Fiber optic cables
+* Radio signals
+* Network connectors
+* Electrical signals
+
+## Devices
+
+* Hub
+* Repeater
+* Cables
+* Physical network interfaces
+
+## Data Unit
+
+**Bits**
+
+```text
+101010101010
+```
+
+## Troubleshooting
+
+Check:
+
+* Cable connection
+* Network port LEDs
+* Damaged cable
+* Power
+* NIC
+* Switch port
+* Fiber connection
+
+---
+
+# 10. OSI Layer Summary
+
+| Layer | Name         | Key Concept                   | Device/Technology    |
+| ----- | ------------ | ----------------------------- | -------------------- |
+| 7     | Application  | Network services              | HTTP, DNS, SMTP      |
+| 6     | Presentation | Format/Encryption/Compression | Encoding, encryption |
+| 5     | Session      | Session management            | Session control      |
+| 4     | Transport    | End-to-end delivery           | TCP, UDP             |
+| 3     | Network      | IP & Routing                  | Router               |
+| 2     | Data Link    | MAC & Frames                  | Switch               |
+| 1     | Physical     | Bits & Signals                | Cable, Hub           |
+
+---
+
+# 11. Encapsulation
+
+## Definition
+
+Encapsulation is the process of adding control information such as headers and trailers to data as it moves **down the OSI layers** before transmission.
+
+Example:
+
+```text
+Application
+    ↓
+Data
+
+Transport
+    ↓
+Segment
+
+Network
+    ↓
+Packet
+
+Data Link
+    ↓
+Frame
+
+Physical
+    ↓
+Bits
+```
+
+## Detailed Flow
+
+```text
+Application Data
+       ↓
++ Transport Header
+       ↓
+Segment
+       ↓
++ IP Header
+       ↓
+Packet
+       ↓
++ Ethernet Header/Trailer
+       ↓
+Frame
+       ↓
+Bits
+```
+
+The exact headers depend on the protocols being used.
+
+---
+
+# 12. Decapsulation
+
+Decapsulation is the reverse process.
+
+When the receiving device receives the bits, the data moves **up through the layers**.
+
+```text
+Bits
+  ↓
+Frame
+  ↓
+Packet
+  ↓
+Segment
+  ↓
+Data
+```
+
+Each layer processes and removes the information relevant to it before passing the remaining data upward.
+
+---
+
+# 13. Encapsulation vs Decapsulation
+
+| Encapsulation                          | Decapsulation                          |
+| -------------------------------------- | -------------------------------------- |
+| Happens at sender                      | Happens at receiver                    |
+| Data moves downward                    | Data moves upward                      |
+| Headers/trailers are added             | Headers/trailers are processed/removed |
+| Data → Segment → Packet → Frame → Bits | Bits → Frame → Packet → Segment → Data |
+
+---
+
+# 14. TCP/IP Model
+
+The TCP/IP model is the practical networking model used by the Internet and modern networks.
+
+It traditionally has **4 layers**:
+
+| TCP/IP Layer   | Main Responsibility                      |
+| -------------- | ---------------------------------------- |
+| Application    | Application services                     |
+| Transport      | End-to-end communication                 |
+| Internet       | IP addressing and routing                |
+| Network Access | Local delivery and physical transmission |
+
+---
+
+# 15. TCP/IP Application Layer
+
+This layer combines the functions of the OSI:
+
+* Application
+* Presentation
+* Session
+
+## Protocols
+
+* HTTP
+* HTTPS
+* DNS
+* DHCP
+* FTP
+* SMTP
+* SSH
+* SNMP
+
+---
+
+# 16. TCP/IP Transport Layer
+
+Responsible for end-to-end communication.
+
+Main protocols:
+
+* TCP
+* UDP
+
+Responsibilities:
+
+* Segmentation
+* Port numbers
+* Reliability
+* Flow control
+* Error control
+
+---
+
+# 17. TCP/IP Internet Layer
+
+Responsible for logical addressing and routing.
+
+Protocols:
+
+* IPv4
+* IPv6
+* ICMP
+
+Main device:
+
+* Router
+
+Data unit:
+
+**Packet**
+
+---
+
+# 18. TCP/IP Network Access Layer
+
+Responsible for local network communication and physical transmission.
+
+It combines the functions of:
+
+* OSI Data Link Layer
+* OSI Physical Layer
+
+Examples:
+
+* Ethernet
+* Wi-Fi
+* MAC addressing
+* Network interface
+* Physical media
+
+---
+
+# 19. OSI vs TCP/IP
+
+| OSI                                      | TCP/IP                                    |
+| ---------------------------------------- | ----------------------------------------- |
+| 7 layers                                 | 4 layers traditionally                    |
+| Reference model                          | Practical protocol suite/model            |
+| Developed by ISO                         | Developed from ARPA/DARPA Internet work   |
+| More detailed separation                 | More consolidated layers                  |
+| Session and Presentation are separate    | Included in Application                   |
+| Physical and Data Link are separate      | Combined as Network Access                |
+| Mainly used for learning/troubleshooting | Used extensively in real-world networking |
+
+### Mapping
+
+```text
+OSI                         TCP/IP
+
+Application       ┐
+Presentation      ├──────→  Application
+Session           ┘
+
+Transport         ───────→  Transport
+
+Network           ───────→  Internet
+
+Data Link         ┐
+Physical          ┘──────→  Network Access
+```
+
+---
+
+# 20. OSI Model in Real-Life Web Browsing
+
+Suppose you open:
+
+```text
+https://www.example.com
+```
+
+A simplified flow is:
+
+### Layer 7 — Application
+
+Browser uses HTTPS and DNS-related services.
+
+### Layer 6 — Presentation
+
+Data may involve encoding and encryption-related processing.
+
+### Layer 5 — Session
+
+Communication sessions are managed.
+
+### Layer 4 — Transport
+
+TCP provides reliable transport where applicable, using port 443 for HTTPS.
+
+### Layer 3 — Network
+
+IP addressing and routing determine where packets should go.
+
+### Layer 2 — Data Link
+
+Ethernet/Wi-Fi uses frames and MAC addresses for local delivery.
+
+### Layer 1 — Physical
+
+Bits travel through:
+
+* Ethernet cable
+* Fiber
+* Wi-Fi radio
+
+---
+
+# 21. Troubleshooting Using OSI Layers
+
+The OSI model is extremely useful for troubleshooting.
+
+Instead of randomly checking everything, troubleshoot from the bottom upward or use the symptoms to identify the likely layer.
+
+## Layer 1 — Physical
+
+### Problem
+
+No network connectivity.
+
+### Check
+
+```text
+Cable
+↓
+NIC
+↓
+Switch port
+↓
+Link light
+↓
+Power
+```
+
+---
+
+## Layer 2 — Data Link
+
+### Problem
+
+Device has physical connectivity but cannot communicate locally.
+
+### Check
+
+```text
+MAC address
+VLAN
+Switch port
+ARP
+NIC configuration
+```
+
+Command:
+
+```cmd
+arp -a
+```
+
+---
+
+## Layer 3 — Network
+
+### Problem
+
+Cannot reach another network.
+
+### Check
+
+```text
+IP address
+Subnet mask
+Default gateway
+Routing
+```
+
+Commands:
+
+```cmd
+ipconfig /all
+ping <gateway>
+tracert <destination>
+```
+
+---
+
+## Layer 4 — Transport
+
+### Problem
+
+Server is reachable but a specific service/port is unavailable.
+
+Example:
+
+```text
+Server IP → Ping works
+HTTPS → Does not work
+```
+
+Check:
+
+```text
+Port 443
+Firewall
+TCP connectivity
+Service status
+```
+
+Command:
+
+```powershell
+Test-NetConnection server-ip -Port 443
+```
+
+---
+
+## Layer 5 — Session
+
+### Problem
+
+Connection/session repeatedly disconnects.
+
+Check:
+
+* Session timeout
+* Authentication/session management
+* Application connection state
+
+---
+
+## Layer 6 — Presentation
+
+### Problem
+
+Encryption, certificate or data-format issues.
+
+Check:
+
+* Certificate
+* TLS configuration
+* Encoding
+* Data format
+
+---
+
+## Layer 7 — Application
+
+### Problem
+
+The network works but the application does not.
+
+Example:
+
+```text
+Ping → Successful
+Port 443 → Open
+Website → Not loading
+```
+
+Check:
+
+* Application/service
+* DNS
+* Web server
+* Application configuration
+* Authentication
+* Logs
+
+---
+
+
+
+# 22. Important Networking Terms
+
+### MAC Address
+
+A hardware/network-interface address used for local network communication.
+
+### IP Address
+
+A logical address used to identify and communicate with devices across IP networks.
+
+### Port
+
+A logical endpoint used to identify a network service or application.
+
+Example:
+
+```text
+HTTPS → 443
+SSH   → 22
+DNS   → 53
+```
+
+### Packet
+
+Network-layer data unit.
+
+### Frame
+
+Data-link-layer data unit.
+
+### Segment
+
+Transport-layer data unit for TCP.
+
+### Bits
+
+Physical-layer representation of transmitted data.
+
+---
+
+# 23. Quick Revision
+
+```text
+Layer 7 → Application → HTTP, DNS, FTP
+Layer 6 → Presentation → Encryption, Compression, Translation
+Layer 5 → Session → Session Management
+Layer 4 → Transport → TCP, UDP, Ports
+Layer 3 → Network → IP, Routing
+Layer 2 → Data Link → MAC, Frames, Switch
+Layer 1 → Physical → Bits, Cables, Signals
+```
+
+
+
+---
+
+# 24. Interview Questions
+
+### Q1. What is the OSI model?
+
+
+The OSI model is a seven-layer reference model developed by ISO to standardize and explain how data communication occurs between networked systems. The seven layers are Physical, Data Link, Network, Transport, Session, Presentation and Application. It helps network engineers understand communication functions and troubleshoot problems layer by layer.
+
+---
+
+### Q2. What are the seven layers of the OSI model?
+
+
+
+The seven layers are:
+
+1. Physical
+2. Data Link
+3. Network
+4. Transport
+5. Session
+6. Presentation
+7. Application
+
+---
+
+### Q3. Which layer is responsible for routing?
+
+
+
+The **Network Layer, Layer 3**, is responsible for logical addressing and routing. Routers operate primarily at this layer and use IP addresses and routing tables to forward packets between networks.
+
+---
+
+### Q4. Which layer uses MAC addresses?
+
+
+
+The **Data Link Layer, Layer 2**, uses MAC addresses for local network communication.
+
+---
+
+### Q5. What is the difference between TCP and UDP?
+
+
+
+TCP is connection-oriented and provides reliable, ordered and error-controlled delivery. UDP is connectionless and has lower overhead but does not guarantee delivery or ordering. TCP is commonly used when reliability is important, while UDP is useful where speed and low overhead are more important.
+
+---
+
+### Q6. What is encapsulation?
+
+
+Encapsulation is the process in which data moves down the networking layers at the sender and each layer adds its required control information. The data eventually becomes a frame and is transmitted as bits over the physical medium.
+
+---
+
+### Q7. What is decapsulation?
+
+
+
+Decapsulation occurs at the receiving device. As the data moves up through the networking layers, each layer processes the information relevant to it and passes the remaining data to the next layer until the original application data is delivered.
+
+---
+
+### Q8. What is the difference between OSI and TCP/IP?
+
+
+
+The OSI model has seven layers and is mainly used as a conceptual reference model for understanding networking. The TCP/IP model traditionally has four layers and is closely associated with the protocols and architecture used by the Internet. TCP/IP combines some OSI layers, such as Session and Presentation into Application and Physical and Data Link into Network Access.
+
+---
+
+### Q9. How do you use the OSI model for troubleshooting?
+
+
+
+I use the OSI model to troubleshoot systematically instead of guessing. I start by checking physical connectivity, then verify Layer 2 issues such as MAC/VLAN connectivity, Layer 3 IP configuration and routing, Layer 4 ports and firewall connectivity, and finally Layer 5–7 session, encryption and application issues. 
+
+---
+
+
+```text
+L1 → Physical → Bits → Cable
+L2 → Data Link → MAC → Frame → Switch
+L3 → Network → IP → Packet → Router
+L4 → Transport → TCP/UDP → Port → Segment
+L5 → Session → Session
+L6 → Presentation → Encryption/Compression
+L7 → Application → HTTP/HTTPS
+```
+
+### Troubleshooting sequence:
+
+```text
+Physical
+   ↓
+Data Link
+   ↓
+Network
+   ↓
+Transport
+   ↓
+Session
+   ↓
+Presentation
+   ↓
+Application
+
+The **OSI model** helps us understand network communication through seven separate layers, while the **TCP/IP model** represents the practical architecture used by Internet networking. Understanding both models is important for networking, IT support, cloud and DevOps roles because they provide a structured way to understand protocols, devices, data flow and troubleshooting.
+
+
