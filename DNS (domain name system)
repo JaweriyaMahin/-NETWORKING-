@@ -1,0 +1,281 @@
+DNS — Domain Name System ⭐
+1. What is DNS?
+
+DNS (Domain Name System) is a system used to translate human-readable domain names into IP addresses.
+
+For example, instead of remembering a server's IP address, users can access a website using a domain name such as:
+
+www.example.com
+
+DNS finds the corresponding IP address so the client can communicate with the correct server.
+
+Simple Definition
+
+DNS is like the phonebook of the internet. It converts domain names into IP addresses.
+
+2. Why is DNS Required?
+
+Computers communicate using IP addresses, but remembering IP addresses for every website or service would be difficult.
+
+DNS provides:
+
+Easy-to-remember domain names
+Automatic name-to-IP resolution
+Service discovery through records such as MX
+Support for both IPv4 and IPv6
+Better scalability for large networks
+Caching to reduce repeated DNS queries
+Interview Answer
+
+DNS is required because users work with domain names while computers communicate using IP addresses. DNS provides name resolution, allowing users and applications to access services using meaningful names instead of IP addresses.
+
+3. DNS Hierarchy
+
+DNS uses a hierarchical structure rather than storing all domain information in one place.
+
+DNS Hierarchy
+                    Root
+                     |
+             Top-Level Domain
+                 (.com)
+                     |
+             Domain Name
+              (example)
+                     |
+            Subdomain/Host
+                  (www)
+Main Levels
+1. Root
+
+The root is at the top of the DNS hierarchy.
+
+It is represented by:
+
+.
+
+The root directs queries toward the appropriate Top-Level Domain servers.
+
+2. Top-Level Domain (TLD)
+
+Examples:
+
+.com
+.org
+.net
+.in
+.edu
+3. Second-Level Domain
+
+Example:
+
+example.com
+
+Here, example is the domain.
+
+4. Subdomain / Host
+
+Example:
+
+www.example.com
+
+www can represent a host or subdomain.
+
+4. DNS Resolver
+
+A DNS resolver is responsible for finding the IP address associated with a domain name on behalf of a client.
+
+The resolver is commonly provided by:
+
+ISP
+Organization
+Public DNS provider
+Local DNS infrastructure
+Basic Flow
+Client
+   ↓
+DNS Resolver
+   ↓
+DNS Servers
+   ↓
+IP Address
+   ↓
+Client
+
+The resolver may also have a cache, allowing it to answer requests without performing the complete lookup every time.
+
+5. Recursive vs Iterative DNS Query
+Recursive Query
+
+In a recursive query, the client asks the DNS resolver to provide the final answer.
+
+Client → Resolver
+          ↓
+       DNS lookup
+          ↓
+      Final Answer
+          ↓
+        Client
+
+The resolver takes responsibility for finding the answer.
+
+Simple Interview Answer
+
+In a recursive query, the client expects the DNS resolver to find the final answer on its behalf.
+
+Iterative Query
+
+In an iterative query, a DNS server provides the best information it currently has, such as a referral to another DNS server.
+
+The resolver then continues the lookup.
+
+Resolver → Root
+             ↓
+          TLD Server
+             ↓
+       Authoritative Server
+             ↓
+          Final Answer
+Simple Interview Answer
+
+In an iterative query, the DNS server responds with the best information it has, often referring the resolver to another DNS server. The resolver continues the lookup.
+
+Difference
+Recursive	Iterative
+Client expects final answer	Server may provide a referral
+Resolver does the lookup	Resolver continues between servers
+Common client-to-resolver model	Common resolver-to-DNS-server model
+6. DNS Records
+
+DNS records contain information about a domain and its services.
+
+A Record
+Purpose
+
+Maps a domain name to an IPv4 address.
+
+example.com → IPv4 address
+Remember
+
+A = IPv4 Address
+
+AAAA Record
+Purpose
+
+Maps a domain name to an IPv6 address.
+
+Remember
+
+AAAA = IPv6 Address
+
+CNAME Record
+Purpose
+
+CNAME stands for Canonical Name.
+
+It creates an alias from one domain name to another domain name.
+
+www.example.com
+       ↓
+example.com
+Important
+
+CNAME points to a domain name, not directly to an IP address.
+
+MX Record
+Purpose
+
+MX stands for Mail Exchange.
+
+It specifies which mail servers handle email for a domain.
+
+example.com
+     ↓
+Mail Server
+Remember
+
+MX = Mail Server
+
+NS Record
+Purpose
+
+NS stands for Name Server.
+
+It identifies the authoritative DNS servers responsible for a domain or DNS zone.
+
+Remember
+
+NS = Name Server
+
+TXT Record
+Purpose
+
+TXT records store text-based information associated with a domain.
+
+They are commonly used for:
+
+Domain verification
+SPF-related email configuration
+Security-related policies
+Other service verification
+Remember
+
+TXT = Text information
+
+PTR Record
+Purpose
+
+PTR stands for Pointer.
+
+It is mainly used for reverse DNS lookup, mapping an IP address back to a domain/hostname.
+
+IP Address → Hostname
+Remember
+
+PTR = Reverse lookup
+
+SOA Record
+
+SOA stands for Start of Authority.
+
+It contains important administrative information about a DNS zone.
+
+It generally includes information such as:
+
+Primary authoritative name server
+Responsible administrator
+Serial number
+Refresh timing
+Retry timing
+Expiration timing
+Negative caching/TTL-related information
+Remember
+
+SOA = Main administrative information for a DNS zone
+
+DNS Caching
+
+DNS caching means storing DNS lookup results temporarily so the same information does not have to be retrieved repeatedly.
+
+Caching can exist at different levels:
+
+Browser
+   ↓
+Operating System
+   ↓
+DNS Resolver
+Benefits
+Faster DNS resolution
+Reduced DNS traffic
+Reduced load on DNS servers
+Better performance
+TTL
+
+DNS records have a TTL (Time to Live) that determines how long a cached DNS response can generally be retained.
+
+If the TTL expires, the resolver may need to perform another lookup.
+
+Interview Answer
+
+DNS caching stores DNS responses temporarily to reduce lookup time and DNS traffic. TTL controls how long a DNS record can generally remain cached before it needs to be refreshed.
+
+DNS is a distributed hierarchical naming system that resolves human-readable domain names to IP addresses and supports services such as web access and email through different DNS records.
