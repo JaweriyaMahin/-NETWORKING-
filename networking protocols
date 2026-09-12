@@ -22,7 +22,7 @@ HTTP → 80
 HTTPS → 443
 SSH → 22
 FTP → 21
-Interview Answer
+
 
 TCP is a connection-oriented and reliable transport-layer protocol.
 It establishes a connection before transferring data and provides reliable, 
@@ -46,7 +46,7 @@ DHCP
 VoIP
 Online gaming
 Video/audio streaming
-Interview Answer
+
 
 UDP is a connectionless transport-layer protocol that provides fast
 data transmission with low overhead. Unlike TCP, it does not guarantee
@@ -87,7 +87,7 @@ Provides
 Encryption
 Data integrity
 Server authentication
-Interview Answer
+
 
 HTTPS is the secure version of HTTP. It uses TLS to encrypt communication 
 between the client and server, helping protect sensitive information such as passwords, payment details, and session data.
@@ -130,7 +130,7 @@ Security	Not encrypted by default	Encrypted
 Port	21	22
 Protocol basis	FTP	SSH
 Secure file transfer	No	Yes
-Interview Answer
+
 
 SFTP is a secure file-transfer protocol that runs over SSH.
 It encrypts both authentication information and file data, making it more secure than traditional FTP.
@@ -150,7 +150,7 @@ Secure command-line access
 Secure file transfer through SFTP
 Port forwarding
 Secure tunneling
-Interview Answer
+
 
 SSH is a secure remote-access protocol that allows administrators to connect 
 to and manage remote systems over an encrypted connection. It commonly uses TCP port 22.
@@ -169,7 +169,7 @@ Important Point
 
 SMTP is mainly used for sending email, not retrieving it.
 
-Interview Answer
+
 
 SMTP is an application-layer protocol used to send and relay emails from clients to mail servers and between mail servers.
 
@@ -186,7 +186,6 @@ Key Point
 POP3 traditionally focuses on downloading messages to the client and may 
 remove them from the server depending on configuration.
 
-Interview Answer
 
 POP3 is an email retrieval protocol that downloads emails from a mail server to the user's device.
 It is generally simpler than IMAP and is more suitable when email is primarily accessed from one device.
@@ -210,7 +209,7 @@ Main purpose	Download emails	Synchronize/access emails
 Server storage	Limited/traditional download model	Yes
 Multiple devices	Less suitable	Better
 Synchronization	Limited	Strong
-Interview Answer
+
 
 IMAP allows users to access and synchronize emails directly from the mail server.
 It is useful when the same mailbox needs to be accessed from multiple devices because folders,
@@ -249,7 +248,7 @@ CNAME → Alias
 MX → Mail server
 NS → Name server
 TXT → Text information
-Interview Answer
+
 
 DNS is a name-resolution system that translates domain names into IP addresses. 
 It allows users to access websites and services using human-readable names instead of remembering IP addresses.
@@ -282,7 +281,7 @@ Client requests the offered configuration.
 A — Acknowledgment
 Server confirms the IP assignment.
 
-Interview Answer
+
 
 DHCP automatically assigns IP configuration to network devices.
 The basic DHCP process is DORA—Discover, Offer, Request, and Acknowledgment.
@@ -313,7 +312,7 @@ Layer
 
 Generally associated with the Network/Internet access boundary rather than fitting neatly into one OSI layer.
 
-Interview Answer
+
 
 ARP is used in IPv4 networks to resolve an IP address to a MAC address on 
 the local network. This allows a device to build the Ethernet frame needed to deliver packets to the correct local destination.
@@ -335,7 +334,7 @@ ping 8.8.8.8
 
 uses ICMP Echo Request and Echo Reply messages.
 
-Interview Answer
+
 
 ICMP is a network-layer protocol used for error reporting, diagnostics, 
 and network-control messages. Tools such as ping use ICMP to test 
@@ -362,7 +361,7 @@ Memory usage
 Interface status
 Network traffic
 Device availability
-Interview Answer
+
 
 SNMP is a network-management protocol used to monitor and manage network devices.
 An SNMP manager communicates with agents running on devices to collect information 
@@ -389,7 +388,7 @@ Port	23	22
 Encryption	No	Yes
 Secure remote access	No	Yes
 Modern usage	Limited	Common
-Interview Answer
+
 
 Telnet is a remote-access protocol that provides command-line access
 to another system, but it does not encrypt communication. 
@@ -411,7 +410,7 @@ Remote Windows administration
 Remote desktop access
 Troubleshooting
 Working on a remote Windows machine
-Interview Answer
+
 
 RDP is a remote desktop protocol primarily used to access Windows 
 systems remotely through a graphical interface. The default TCP
