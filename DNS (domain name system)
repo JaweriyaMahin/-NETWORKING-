@@ -124,7 +124,8 @@ In a recursive query, the client expects the DNS resolver to find the final answ
 
 Iterative Query
 
-In an iterative query, a DNS server provides the best information it currently has, such as a referral to another DNS server.
+In an iterative query, a DNS server provides the best information it
+currently has, such as a referral to another DNS server.
 
 The resolver then continues the lookup.
 
@@ -135,9 +136,10 @@ Resolver → Root
        Authoritative Server
              ↓
           Final Answer
-Simple Interview Answer
 
-In an iterative query, the DNS server responds with the best information it has, often referring the resolver to another DNS server. The resolver continues the lookup.
+
+In an iterative query, the DNS server responds with the best information it has,
+often referring the resolver to another DNS server. The resolver continues the lookup.
 
 Difference
 Recursive	Iterative
@@ -254,7 +256,8 @@ SOA = Main administrative information for a DNS zone
 
 DNS Caching
 
-DNS caching means storing DNS lookup results temporarily so the same information does not have to be retrieved repeatedly.
+DNS caching means storing DNS lookup results temporarily so the same
+information does not have to be retrieved repeatedly.
 
 Caching can exist at different levels:
 
@@ -276,6 +279,8 @@ If the TTL expires, the resolver may need to perform another lookup.
 
 Interview Answer
 
-DNS caching stores DNS responses temporarily to reduce lookup time and DNS traffic. TTL controls how long a DNS record can generally remain cached before it needs to be refreshed.
+DNS caching stores DNS responses temporarily to reduce lookup time and DNS traffic.
+TTL controls how long a DNS record can generally remain cached before it needs to be refreshed.
 
-DNS is a distributed hierarchical naming system that resolves human-readable domain names to IP addresses and supports services such as web access and email through different DNS records.
+DNS is a distributed hierarchical naming system that resolves human-readable domain names 
+to IP addresses and supports services such as web access and email through different DNS records.
