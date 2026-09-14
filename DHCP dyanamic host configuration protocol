@@ -1,0 +1,320 @@
+DHCP — Dynamic Host Configuration Protocol ⭐
+1. What is DHCP?
+
+DHCP (Dynamic Host Configuration Protocol) is a network protocol that automatically provides devices with the network configuration they need to communicate on a network.
+
+DHCP can provide:
+
+IP address
+Subnet mask
+Default gateway
+DNS server
+Lease duration
+
+Without DHCP, these settings would need to be configured manually on each device.
+
+
+DHCP is a network protocol used to automatically assign IP addresses and other network configuration parameters such as subnet mask, default gateway, and DNS server to client devices.
+
+2. Why DHCP?
+
+DHCP is required because manually configuring IP addresses for every device is time-consuming and can cause configuration errors.
+
+Benefits of DHCP
+Automatic IP assignment
+Reduces manual configuration
+Prevents duplicate IP addresses
+Centralized IP management
+Provides other network settings automatically
+Makes network administration easier
+Simple Example
+
+In an organization with many computers, the administrator does not need to manually configure an IP address on every computer. A DHCP server can automatically assign the required configuration.
+
+3. DORA Process ⭐
+
+DORA is the basic process used by DHCP to assign an IP address to a client.
+
+D → Discover
+O → Offer
+R → Request
+A → Acknowledge
+Basic Flow
+DHCP Client
+     |
+     | 1. Discover
+     ↓
+DHCP Server
+     |
+     | 2. Offer
+     ↓
+DHCP Client
+     |
+     | 3. Request
+     ↓
+DHCP Server
+     |
+     | 4. Acknowledge
+     ↓
+DHCP Client gets configuration
+
+3.1 DHCP Discover
+
+The client does not have an IP address yet, so it broadcasts a DHCP Discover message to find available DHCP servers.
+
+Client → DHCP Discover → Network
+
+Purpose: Find a DHCP server.
+
+3.2 DHCP Offer
+
+A DHCP server receives the Discover message and responds with a DHCP Offer.
+
+The offer can contain:
+
+Proposed IP address
+Subnet mask
+Default gateway
+DNS server
+Lease information
+DHCP Server → DHCP Offer → Client
+
+Purpose: Offer network configuration to the client.
+
+3.3 DHCP Request
+
+The client selects an offer and sends a DHCP Request indicating that it wants to use the offered configuration.
+
+Client → DHCP Request → Server
+
+Purpose: Request the offered IP configuration.
+
+3.4 DHCP Acknowledge
+
+The DHCP server confirms the assignment by sending a DHCP ACK.
+
+Server → DHCP ACK → Client
+
+The client can now configure and use the assigned IP address.
+
+Interview Answer
+
+DORA stands for Discover, Offer, Request, and Acknowledge. The client first discovers a DHCP server, the server offers an IP configuration, the client requests the offered configuration, and the server acknowledges the request and assigns the configuration.
+
+4. DHCP Lease
+
+A DHCP lease is the period for which a DHCP client is allowed to use an IP address assigned by the DHCP server.
+
+The IP address is not necessarily assigned permanently.
+
+Lease Process
+IP Assigned
+    ↓
+Lease Active
+    ↓
+Client Renews Lease
+    ↓
+Lease Continues
+
+When the lease needs renewal, the client communicates with the DHCP server to extend its use of the address.
+
+If the lease expires without successful renewal, the client may eventually stop using that address.
+
+Why Lease?
+
+Leases allow DHCP servers to efficiently reuse IP addresses when devices leave the network.
+
+Interview Answer
+
+A DHCP lease is the amount of time for which a client can use an IP address assigned by the DHCP server. The client normally attempts to renew the lease before it expires.
+
+5. DHCP Server
+
+A DHCP server is responsible for automatically providing IP configuration to DHCP clients.
+
+It manages:
+
+Available IP addresses
+DHCP scopes
+Lease duration
+Gateway information
+DNS information
+Reservations
+Basic Flow
+DHCP Client
+     ↓
+DHCP Server
+     ↓
+IP + Subnet Mask + Gateway + DNS
+Interview Answer
+
+A DHCP server manages a pool of IP addresses and automatically provides clients with IP addresses and other network configuration parameters.
+
+6. DHCP Scope
+
+A DHCP scope is the defined range of IP addresses that a DHCP server can assign to clients within a particular network.
+
+A scope can include:
+
+IP address range
+Subnet mask
+Default gateway
+DNS servers
+Lease duration
+Exclusions
+Important Terms
+
+Address Pool:
+IP addresses available for assignment.
+
+Exclusion:
+Addresses within the range that should not be automatically assigned.
+
+Lease:
+Duration for which an IP address is assigned.
+
+
+
+A DHCP scope defines the range of IP addresses and associated network settings that a DHCP server can provide to clients on a particular subnet.
+
+7. DHCP Reservation
+
+A DHCP reservation ensures that a particular device receives the same IP address whenever it requests an address from DHCP.
+
+The reservation is generally associated with the device's MAC address.
+
+Device MAC Address
+       ↓
+DHCP Reservation
+       ↓
+Specific IP Address
+
+Where It Can Be Useful
+
+Reservations are useful for devices that should consistently have the same IP address while still being managed through DHCP.
+
+Examples:
+
+Network printers
+Certain servers
+Network appliances
+
+Reservation          vs            Static IP
+
+DHCP Reservation	               Static IP
+Managed by DHCP	                   Configured directly on device
+IP is reserved based on device     identity	IP manually configured
+Centralized management	           Configuration is local
+Device still uses DHCP	           Device does not depend on DHCP for its address
+
+
+A DHCP reservation maps a specific device, commonly using its MAC address, to a specific IP address so that the device receives the same IP whenever it uses DHCP.
+
+8. APIPA ⭐
+
+APIPA (Automatic Private IP Addressing) is a feature used by Windows systems when a DHCP server cannot be reached and an IP address cannot be obtained through DHCP.
+
+APIPA addresses are from:
+
+169.254.0.0/16
+What Happens?
+Client
+  ↓
+DHCP Request
+  ↓
+No DHCP Response
+  ↓
+APIPA Address
+169.254.x.x
+Important Point
+
+An APIPA address generally allows communication with other devices on the same local network that are configured appropriately, but it does not provide normal routed network connectivity through a DHCP-provided gateway.
+
+
+
+APIPA is an automatic addressing mechanism used when a Windows client cannot obtain an IP address from DHCP. The system assigns itself an address from the 169.254.0.0/16 range. An APIPA address is a strong indication that DHCP configuration or connectivity should be investigated.
+
+9. DHCP Troubleshooting ⭐
+
+When a client does not receive an IP address automatically, follow a systematic approach.
+
+Step 1 — Check IP Configuration
+
+Windows:
+
+ipconfig /all
+
+Check:
+
+IP address
+Subnet mask
+Default gateway
+DHCP enabled
+DHCP server
+DNS server
+
+
+Step 2 — Check for APIPA
+
+If you see an address such as:
+
+169.254.x.x
+
+the client may not have successfully received an address from DHCP.
+
+Step 3 — Renew the IP Address
+ipconfig /release
+ipconfig /renew
+
+This releases the current DHCP configuration and requests a new one.
+
+Step 4 — Check Physical/Network Connectivity
+
+Check:
+
+Ethernet cable
+Wi-Fi connection
+Network adapter
+Switch port
+VLAN/network connection
+
+
+Step 5 — Check DHCP Server
+
+Verify that:
+
+DHCP service is running
+Scope is active
+Scope has available addresses
+Correct network settings are configured
+DHCP server is reachable
+
+
+Step 6 — Check DHCP Scope
+
+Make sure the scope has not exhausted its available IP addresses.
+
+Also check:
+
+Exclusions
+Reservations
+Lease duration
+Correct subnet
+
+
+Step 7 — Check DHCP Relay
+
+In larger networks, the DHCP server may be located on a different subnet.
+
+Because DHCP discovery initially uses broadcast traffic, a DHCP relay may be required to forward DHCP messages between the client network and DHCP server.
+
+⭐ 
+Problem	Possible Cause 
+No IP address              	DHCP unavailable
+169.254.x.x	DHCP            assignment failed
+Duplicate IP	            Incorrect configuration/reservation
+Cannot reach gateway	    Incorrect network configuration
+DHCP renewal fails	        Network/DHCP server issue
+Scope exhausted	            No available IP addresses
+One VLAN affected	        DHCP relay/VLAN configuration
+DNS not working	            Incorrect DHCP DNS option
