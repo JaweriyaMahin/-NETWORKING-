@@ -285,12 +285,12 @@ Secure Session
   ↓
 Encrypted HTTP Communication
 HTTP vs HTTPS
-HTTP	HTTPS
-Not encrypted by TLS	Protected by TLS
-Port 80 commonly used	Port 443 commonly used
-Less secure	More secure
-Data can be exposed in transit	Data is encrypted in transit
-Interview Answer
+HTTP	                               HTTPS
+Not encrypted by TLS	             Protected by TLS
+Port 80 commonly used	          Port 443 commonly used
+Less secure	                      More secure
+Data can be exposed in transit	 Data is encrypted in transit
+
 
 HTTPS is HTTP secured using TLS. TLS provides encryption, integrity, and server authentication, helping protect data exchanged between the client and server.
 
@@ -318,9 +318,11 @@ Subnets
 Firewalls
 Security groups
 Network ACLs
-Interview Answer
 
-Network segmentation divides a network into smaller isolated or controlled sections. It improves security by limiting communication between different network areas and reducing the potential impact of a security incident.
+
+Network segmentation divides a network into smaller isolated or 
+controlled sections. It improves security by limiting communication
+between different network areas and reducing the potential impact of a security incident.
 
 ⭐ Network Security Quick Revision
 Topic	Main Purpose
@@ -339,37 +341,6 @@ Authorization	Determines permissions
 Zero Trust	Verify before granting access
 HTTPS/TLS	Secure web communication
 Segmentation	Divides network into controlled sections
-🔥 Most Important for Interviews
 
-Remember these pairs:
 
-Stateful vs Stateless
-NAT vs PAT
-IDS vs IPS
-Authentication vs Authorization
-HTTP vs HTTPS
-VPN vs Proxy
 
-And these one-liners:
-
-Firewall → Controls traffic
-
-ACL → Allow/Deny rules
-
-NAT → IP translation
-
-PAT → IP + Port translation
-
-VPN → Secure tunnel
-
-IDS → Detect
-
-IPS → Detect + Prevent
-
-Authentication → Who are you?
-
-Authorization → What can you access?
-
-Zero Trust → Never trust, always verify
-
-Segmentation → Divide and control the network
