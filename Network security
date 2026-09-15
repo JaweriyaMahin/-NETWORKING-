@@ -324,23 +324,5 @@ Network segmentation divides a network into smaller isolated or
 controlled sections. It improves security by limiting communication
 between different network areas and reducing the potential impact of a security incident.
 
-⭐ Network Security Quick Revision
-Topic	Main Purpose
-Firewall	Allow/block network traffic
-Stateful Firewall	Tracks connection state
-Stateless Firewall	Evaluates packets independently
-ACL	Rule-based traffic control
-NAT	Translates IP addresses
-PAT	Multiple private devices share public IP
-VPN	Secure connection over untrusted network
-Proxy	Intermediary between client/server
-IDS	Detects and alerts
-IPS	Detects and blocks/prevents
-Authentication	Verifies identity
-Authorization	Determines permissions
-Zero Trust	Verify before granting access
-HTTPS/TLS	Secure web communication
-Segmentation	Divides network into controlled sections
-
 
 
