@@ -1,0 +1,399 @@
+Network Security ⭐
+
+Network security is the practice of protecting networks, devices, applications, and data from unauthorized access, attacks, and misuse.
+
+For IT Support + AWS/DevOps interviews, these are the important concepts to understand.
+
+1. Firewall ⭐
+Definition
+
+A firewall is a security system that monitors and controls network traffic based on predefined rules.
+
+It can allow or block traffic based on factors such as:
+
+Source IP
+Destination IP
+Port
+Protocol
+Direction
+Connection state
+Basic Flow
+Internet
+   ↓
+[ Firewall ]
+   ↓
+Internal Network
+Example
+
+A firewall rule may allow:
+
+HTTPS → TCP 443 → Allow
+
+while blocking unwanted traffic.
+
+Interview Answer
+
+A firewall monitors and controls incoming and outgoing network traffic based on security rules. It helps prevent unauthorized network access while allowing legitimate traffic.
+
+2. Stateful vs Stateless Firewall ⭐
+Stateful Firewall
+
+A stateful firewall keeps track of active network connections.
+
+It understands whether traffic belongs to an existing connection.
+
+Features
+Maintains connection state
+Can recognize established connections
+More context-aware
+Common in modern network security
+Stateless Firewall
+
+A stateless firewall evaluates each packet independently based mainly on configured rules.
+
+It does not maintain connection state.
+
+Comparison
+Stateful	Stateless
+Tracks connections	Does not track connections
+Understands connection state	Examines packets individually
+More context-aware	Rule-based packet filtering
+Usually more resource-intensive	Usually simpler/faster
+Interview Answer
+
+A stateful firewall tracks the state of network connections, while a stateless firewall evaluates each packet independently according to predefined rules.
+
+3. ACL — Access Control List
+Definition
+
+An ACL is a collection of rules that determines whether specific network traffic should be allowed or denied.
+
+Rules can be based on:
+
+Source IP
+Destination IP
+Protocol
+Port
+Direction
+Basic Concept
+Traffic
+   ↓
+ACL Rules
+   ↓
+Allow / Deny
+Common Uses
+
+ACLs are commonly used on:
+
+Routers
+Switches
+Firewalls
+Cloud networking
+Interview Answer
+
+An ACL is a set of rules used to permit or deny network traffic based on conditions such as source and destination IP addresses, protocols, and ports.
+
+4. NAT — Network Address Translation ⭐
+Definition
+
+NAT translates IP addresses between different networks, commonly between private and public addresses.
+
+A common use is allowing devices with private IP addresses to communicate with the internet through a public IP.
+
+Private Network
+     ↓
+    NAT
+     ↓
+Internet
+Why NAT?
+Conserves public IPv4 addresses
+Allows private networks to access external networks
+Hides internal addressing from external networks
+Helps organizations manage private addressing
+Interview Answer
+
+NAT translates IP addresses between networks. A common use is translating private IP addresses to public addresses when internal devices access the internet.
+
+5. PAT — Port Address Translation
+Definition
+
+PAT is a form of NAT that uses port numbers to allow multiple private devices to share a single public IPv4 address.
+
+Private Device 1 ─┐
+Private Device 2 ─┼──> PAT ──> One Public IP
+Private Device 3 ─┘
+
+The NAT device tracks different connections using port numbers.
+
+NAT vs PAT
+NAT	PAT
+Translates IP addresses	Translates IP + port information
+Can use one-to-one mappings	Many private devices can share one public IP
+General address translation	Common for internet access
+Interview Answer
+
+PAT is a type of NAT that allows multiple private devices to share one public IP address by distinguishing their connections using different port numbers.
+
+6. VPN — Virtual Private Network ⭐
+Definition
+
+A VPN creates a secure connection over an untrusted network such as the internet.
+
+It commonly provides:
+
+Encryption
+Secure remote access
+Authentication
+Private communication over public networks
+Basic Flow
+User
+  ↓
+Internet
+  ↓
+Encrypted VPN Tunnel
+  ↓
+Company Network
+Types
+
+Remote Access VPN
+Connects an individual user to an organization's network.
+
+Site-to-Site VPN
+Connects two networks or locations securely.
+
+Interview Answer
+
+A VPN creates a secure, encrypted connection over a public or untrusted network. It is commonly used for remote users to securely access organizational resources and for connecting different networks.
+
+7. Proxy
+Definition
+
+A proxy server acts as an intermediary between a client and another server.
+
+Client
+  ↓
+Proxy
+  ↓
+Internet / Server
+
+Instead of directly communicating with the destination, the client communicates through the proxy.
+
+Common Uses
+Web filtering
+Access control
+Monitoring
+Caching
+Hiding the client's direct network identity from the destination in some architectures
+Types
+Forward Proxy → Represents clients
+Reverse Proxy → Represents servers
+Interview Answer
+
+A proxy acts as an intermediary between a client and a destination server. It can be used for filtering, access control, caching, monitoring, and other traffic-management purposes.
+
+8. IDS vs IPS ⭐
+IDS — Intrusion Detection System
+
+IDS monitors network or system activity and detects suspicious activity.
+
+It generally generates an alert rather than directly blocking the traffic.
+
+Traffic → IDS → Detect → Alert
+IPS — Intrusion Prevention System
+
+IPS detects suspicious or malicious activity and can take action to prevent or block it.
+
+Traffic → IPS → Detect → Block/Prevent
+Comparison
+IDS	IPS
+Detects threats	Detects and prevents threats
+Generates alerts	Can block traffic
+Usually monitoring-focused	Prevention-focused
+Often deployed out-of-band	Commonly placed inline
+Interview Answer
+
+IDS is primarily used to detect and alert on suspicious activity, while IPS can detect suspicious activity and actively block or prevent it.
+
+9. Authentication vs Authorization ⭐
+
+These two concepts are commonly asked in interviews.
+
+Authentication
+
+Authentication answers:
+
+"Who are you?"
+
+It verifies the identity of a user or system.
+
+Examples:
+
+Username/password
+OTP
+Biometrics
+Security keys
+Certificates
+Authorization
+
+Authorization answers:
+
+"What are you allowed to do?"
+
+It determines what resources or actions an authenticated user can access.
+
+Examples:
+
+Read files
+Modify files
+Access a server
+Delete resources
+Easy Memory Trick
+Authentication → Who are you?
+Authorization   → What can you access?
+Interview Answer
+
+Authentication verifies the identity of a user or system, while authorization determines what that authenticated identity is permitted to access or perform.
+
+10. Zero Trust Basics ⭐
+Definition
+
+Zero Trust is a security approach based on the principle:
+
+Never trust automatically; always verify.
+
+Traditional security often relied heavily on protecting the network perimeter.
+
+Zero Trust assumes that no user, device, application, or network location should automatically be trusted.
+
+Key Principles
+Verify identity continuously
+Use least-privilege access
+Do not automatically trust internal users
+Validate devices and access conditions
+Monitor activity
+Limit access to only what is required
+Basic Model
+User / Device
+     ↓
+Verify Identity
+     ↓
+Check Permissions
+     ↓
+Grant Limited Access
+     ↓
+Monitor
+Interview Answer
+
+Zero Trust is a security model where access is not automatically trusted based on network location. Every access request is verified and users and systems receive only the permissions they require.
+
+11. HTTPS / TLS ⭐
+HTTPS
+
+HTTPS (HTTP Secure) protects HTTP communication using TLS (Transport Layer Security).
+
+Default port:
+
+TCP 443
+TLS Provides
+Encryption → Protects data from being read by unauthorized parties
+Integrity → Helps detect modification of data
+Authentication → Helps verify the identity of the server through certificates
+Basic Flow
+Client
+  ↓
+TLS Handshake
+  ↓
+Certificate Verification
+  ↓
+Secure Session
+  ↓
+Encrypted HTTP Communication
+HTTP vs HTTPS
+HTTP	HTTPS
+Not encrypted by TLS	Protected by TLS
+Port 80 commonly used	Port 443 commonly used
+Less secure	More secure
+Data can be exposed in transit	Data is encrypted in transit
+Interview Answer
+
+HTTPS is HTTP secured using TLS. TLS provides encryption, integrity, and server authentication, helping protect data exchanged between the client and server.
+
+12. Network Segmentation ⭐
+Definition
+
+Network segmentation divides a large network into smaller logical or physical sections.
+
+                Network
+                   |
+       ┌───────────┼───────────┐
+       ↓           ↓           ↓
+    Users       Servers      Guest
+    Network      Network     Network
+Why Segmentation?
+Improves security
+Limits unauthorized access
+Reduces the impact of attacks
+Controls traffic between network areas
+Helps reduce unnecessary broadcast traffic
+Makes network management easier
+Common Methods
+VLANs
+Subnets
+Firewalls
+Security groups
+Network ACLs
+Interview Answer
+
+Network segmentation divides a network into smaller isolated or controlled sections. It improves security by limiting communication between different network areas and reducing the potential impact of a security incident.
+
+⭐ Network Security Quick Revision
+Topic	Main Purpose
+Firewall	Allow/block network traffic
+Stateful Firewall	Tracks connection state
+Stateless Firewall	Evaluates packets independently
+ACL	Rule-based traffic control
+NAT	Translates IP addresses
+PAT	Multiple private devices share public IP
+VPN	Secure connection over untrusted network
+Proxy	Intermediary between client/server
+IDS	Detects and alerts
+IPS	Detects and blocks/prevents
+Authentication	Verifies identity
+Authorization	Determines permissions
+Zero Trust	Verify before granting access
+HTTPS/TLS	Secure web communication
+Segmentation	Divides network into controlled sections
+🔥 Most Important for Interviews
+
+Remember these pairs:
+
+Stateful vs Stateless
+NAT vs PAT
+IDS vs IPS
+Authentication vs Authorization
+HTTP vs HTTPS
+VPN vs Proxy
+
+And these one-liners:
+
+Firewall → Controls traffic
+
+ACL → Allow/Deny rules
+
+NAT → IP translation
+
+PAT → IP + Port translation
+
+VPN → Secure tunnel
+
+IDS → Detect
+
+IPS → Detect + Prevent
+
+Authentication → Who are you?
+
+Authorization → What can you access?
+
+Zero Trust → Never trust, always verify
+
+Segmentation → Divide and control the network
