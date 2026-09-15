@@ -31,9 +31,11 @@ HTTPS → TCP 443 → Allow
 
 while blocking unwanted traffic.
 
-Interview Answer
 
-A firewall monitors and controls incoming and outgoing network traffic based on security rules. It helps prevent unauthorized network access while allowing legitimate traffic.
+
+A firewall monitors and controls incoming and outgoing network traffic 
+based on security rules. It helps prevent unauthorized network access 
+while allowing legitimate traffic.
 
 2. Stateful vs Stateless Firewall ⭐
 Stateful Firewall
@@ -54,14 +56,15 @@ A stateless firewall evaluates each packet independently based mainly on configu
 It does not maintain connection state.
 
 Comparison
-Stateful	Stateless
-Tracks connections	Does not track connections
-Understands connection state	Examines packets individually
-More context-aware	Rule-based packet filtering
-Usually more resource-intensive	Usually simpler/faster
-Interview Answer
+Stateful	                       Stateless
+Tracks connections	           Does not track connections
+Understands connection state	  Examines packets individually
+More context-aware	           Rule-based packet filtering
+Usually more resource-intensive Usually simpler/faster
 
-A stateful firewall tracks the state of network connections, while a stateless firewall evaluates each packet independently according to predefined rules.
+
+A stateful firewall tracks the state of network connections,
+while a stateless firewall evaluates each packet independently according to predefined rules.
 
 3. ACL — Access Control List
 Definition
@@ -105,6 +108,7 @@ Private Network
     NAT
      ↓
 Internet
+
 Why NAT?
 Conserves public IPv4 addresses
 Allows private networks to access external networks
@@ -130,7 +134,7 @@ NAT	PAT
 Translates IP addresses	Translates IP + port information
 Can use one-to-one mappings	Many private devices can share one public IP
 General address translation	Common for internet access
-Interview Answer
+
 
 PAT is a type of NAT that allows multiple private devices to share one public IP address by distinguishing their connections using different port numbers.
 
@@ -161,7 +165,7 @@ Connects an individual user to an organization's network.
 Site-to-Site VPN
 Connects two networks or locations securely.
 
-Interview Answer
+
 
 A VPN creates a secure, encrypted connection over a public or untrusted network. It is commonly used for remote users to securely access organizational resources and for connecting different networks.
 
@@ -187,9 +191,10 @@ Hiding the client's direct network identity from the destination in some archite
 Types
 Forward Proxy → Represents clients
 Reverse Proxy → Represents servers
-Interview Answer
 
-A proxy acts as an intermediary between a client and a destination server. It can be used for filtering, access control, caching, monitoring, and other traffic-management purposes.
+
+A proxy acts as an intermediary between a client and a destination server. 
+It can be used for filtering, access control, caching, monitoring, and other traffic-management purposes.
 
 8. IDS vs IPS ⭐
 IDS — Intrusion Detection System
@@ -210,9 +215,10 @@ Detects threats	Detects and prevents threats
 Generates alerts	Can block traffic
 Usually monitoring-focused	Prevention-focused
 Often deployed out-of-band	Commonly placed inline
-Interview Answer
 
-IDS is primarily used to detect and alert on suspicious activity, while IPS can detect suspicious activity and actively block or prevent it.
+
+IDS is primarily used to detect and alert on suspicious activity,
+while IPS can detect suspicious activity and actively block or prevent it.
 
 9. Authentication vs Authorization ⭐
 
@@ -249,42 +255,12 @@ Access a server
 Delete resources
 Easy Memory Trick
 Authentication → Who are you?
-Authorization   → What can you access?
-Interview Answer
+Authorization   → What can you access
 
-Authentication verifies the identity of a user or system, while authorization determines what that authenticated identity is permitted to access or perform.
+Authentication verifies the identity of a user or system,
+while authorization determines what that authenticated identity is permitted to access or perform.
 
-10. Zero Trust Basics ⭐
-Definition
 
-Zero Trust is a security approach based on the principle:
-
-Never trust automatically; always verify.
-
-Traditional security often relied heavily on protecting the network perimeter.
-
-Zero Trust assumes that no user, device, application, or network location should automatically be trusted.
-
-Key Principles
-Verify identity continuously
-Use least-privilege access
-Do not automatically trust internal users
-Validate devices and access conditions
-Monitor activity
-Limit access to only what is required
-Basic Model
-User / Device
-     ↓
-Verify Identity
-     ↓
-Check Permissions
-     ↓
-Grant Limited Access
-     ↓
-Monitor
-Interview Answer
-
-Zero Trust is a security model where access is not automatically trusted based on network location. Every access request is verified and users and systems receive only the permissions they require.
 
 11. HTTPS / TLS ⭐
 HTTPS
