@@ -1,0 +1,126 @@
+Switching — Networking Notes ⭐
+1. What is Switching?
+
+Switching is the process of forwarding network data from one device to another within a network, mainly a LAN.
+
+A network switch connects multiple devices such as computers, servers, printers, and other network devices.
+
+PC1 ──┐
+PC2 ──┼── Switch ── Server
+PC3 ──┘
+
+A switch mainly works at OSI Layer 2 (Data Link Layer) and uses MAC addresses to forward Ethernet frames.
+
+2. Why Do We Need a Switch?
+
+Without a switch, connecting many devices efficiently in a LAN would be difficult.
+
+A switch provides:
+
+Connectivity between devices
+Efficient frame forwarding
+Better use of network bandwidth
+Communication between devices in the same LAN
+Network segmentation using VLANs
+
+3. MAC Address ⭐
+
+A MAC address (Media Access Control address) is a hardware/network-interface address used for communication at Layer 2.
+
+Example format:
+
+00:1A:2B:3C:4D:5E
+
+A switch uses the destination MAC address in an Ethernet frame to determine where to forward the frame.
+
+Remember
+Switch → MAC Address
+Router → IP Address
+
+4. MAC Address Table ⭐
+
+A switch maintains a MAC address table, also called a CAM table.
+
+It maps:
+
+MAC Address → Switch Port
+
+For example, conceptually:
+
+MAC A → Port 1
+MAC B → Port 2
+MAC C → Port 3
+
+The switch uses this information to forward frames toward the correct port.
+
+5. How Does a Switch Learn MAC Addresses?
+
+When a frame enters a switch, the switch examines the source MAC address and learns which port that MAC address is associated with.
+
+Basic Process
+Frame arrives
+     ↓
+Read Source MAC
+     ↓
+Learn MAC → Port
+     ↓
+Read Destination MAC
+     ↓
+Forward frame
+
+This learning process allows the switch to build its MAC address table dynamically.
+
+
+10. VLAN — Virtual LAN ⭐⭐⭐
+
+This is especially important for cloud/networking fundamentals.
+
+A VLAN logically divides a physical switch network into separate broadcast domains.
+
+Instead of having all devices in one large Layer 2 network, we can logically separate them.
+
+Physical Switch
+      |
+ ┌────┼────┐
+ ↓    ↓    ↓
+VLAN10 VLAN20 VLAN30
+Users Servers Guests
+Why VLAN?
+Network segmentation
+Better security
+Smaller broadcast domains
+Better network organization
+Traffic isolation
+
+
+A VLAN logically divides a physical network into separate Layer 2 broadcast domains. It is commonly used for network segmentation, security, and better traffic management.
+
+
+12. Switching and IP Address
+
+A switch primarily makes forwarding decisions using MAC addresses, but IP addresses are still present in the packets carried inside Ethernet frames.
+
+Think of the communication as:
+
+Application Data
+      ↓
+IP Packet
+      ↓
+Ethernet Frame
+      ↓
+Switch uses MAC
+
+This distinction is important when learning AWS networking, where you will frequently work with IP addresses, subnets, routing, and security controls.
+
+13. Switch vs Hub ⭐
+
+A hub sends incoming traffic to all connected ports.
+
+A switch learns MAC addresses and can forward traffic toward the appropriate port.
+
+Hub	Switch
+Layer 1	Mainly Layer 2
+Sends traffic to all ports	Uses MAC table for forwarding
+Less efficient	More efficient
+Mostly obsolete	Widely used
+
