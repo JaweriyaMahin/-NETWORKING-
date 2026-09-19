@@ -169,6 +169,15 @@ them with **real-world troubleshooting, cloud networking, and DevOps environment
 * HTTPS / TLS
 * Network Segmentation
 
+### 10. VPN virtual private cloud 
+* what is VPN
+* why organization use VPN
+* remote-access VPN
+* site-to-site VPN
+* IPsec Basics
+* VPN authentication
+* VPN troubleshooting
+
 
 ## ☁️ AWS Cloud & DevOps Connection
 
