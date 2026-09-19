@@ -1,0 +1,217 @@
+🔐 VPN (Virtual Private Network)
+1. What is VPN?
+
+VPN (Virtual Private Network) creates a secure connection between networks or devices over an untrusted network such as the Internet.
+
+It uses encryption and authentication to protect data while it travels between the two endpoints.
+
+Simple Example
+
+An employee working from home connects to the company's VPN. After authentication, their computer can securely access permitted internal company resources.
+
+In simple terms:
+
+VPN creates a secure tunnel over the Internet for communication between a user/device and a private network.
+
+2. Why Organizations Use VPN
+
+Organizations use VPNs mainly for secure remote connectivity and connecting different offices/networks.
+
+Common uses:
+
+Secure remote access for employees
+Connect branch offices
+Connect on-premises networks with cloud networks
+Protect data over public networks
+Access internal/private resources
+Secure communication between networks
+Example
+Employee Laptop
+      |
+   Internet
+      |
+    VPN
+      |
+Company Private Network
+      |
+Internal Applications
+
+Without VPN, directly exposing internal applications to the public Internet can increase the attack surface.
+
+3. Remote-Access VPN
+
+A Remote-Access VPN connects an individual user/device to an organization's private network.
+
+It is commonly used for:
+
+Work from home
+Remote employees
+IT administrators
+Secure access to internal applications
+Example
+Employee Laptop
+      |
+   Internet
+      |
+Remote-Access VPN
+      |
+Company Network
+      |
+Internal Server
+
+The user normally needs to authenticate before the VPN connection is established.
+
+4. Site-to-Site VPN
+
+A Site-to-Site VPN connects two networks rather than connecting one individual user.
+
+For example:
+
+Office A
+Private Network
+      |
+VPN Gateway
+      |
+   Internet
+      |
+VPN Gateway
+      |
+Office B
+Private Network
+
+It is useful for:
+
+Connecting headquarters and branch offices
+Connecting on-premises infrastructure to cloud networks
+Connecting different private networks securely
+AWS Connection
+
+In AWS, AWS Site-to-Site VPN can be used to connect an on-premises network with an AWS VPC through VPN tunnels.
+
+5. IPsec Basics
+
+IPsec (Internet Protocol Security) is a group of protocols used to secure IP communication.
+
+It can provide:
+
+Encryption – protects data from being read
+Authentication – verifies the communicating endpoint
+Integrity – helps ensure data was not modified
+Secure communication over untrusted networks
+
+IPsec is commonly used with site-to-site VPNs.
+
+Important Terms
+
+IKE (Internet Key Exchange)
+Used to negotiate security parameters and establish the security association.
+
+ESP (Encapsulating Security Payload)
+Provides encryption, integrity, and authentication capabilities.
+
+For a fresher, understanding these concepts is enough; detailed IPsec packet formats and cryptographic algorithms can be learned later.
+
+6. VPN Authentication
+
+VPN authentication verifies that the user or device is allowed to establish the VPN connection.
+
+Common authentication methods include:
+
+Username and password
+Digital certificates
+Pre-shared key (PSK)
+Multi-factor authentication (MFA)
+Simple Flow
+User
+ ↓
+VPN Client
+ ↓
+Authentication
+ ↓
+Credentials / Certificate / MFA
+ ↓
+VPN Connection Established
+ ↓
+Access to permitted resources
+
+Authentication answers:
+
+"Who are you?"
+
+Authorization then determines:
+
+"What are you allowed to access?"
+
+When a VPN connection fails, troubleshoot systematically.
+
+Common Checks
+
+1. Check Internet connectivity
+
+ping 8.8.8.8
+
+If the basic Internet connection is unavailable, the VPN may not work.
+
+2. Check VPN credentials
+
+Verify:
+
+Username
+Password
+MFA
+Certificate
+Pre-shared key, where applicable
+
+3. Check VPN client
+
+Verify that the VPN software is:
+
+Running
+Correctly configured
+Updated if required
+
+4. Check firewall/security rules
+
+Make sure required VPN traffic is not being blocked by:
+
+Local firewall
+Corporate firewall
+Security device
+Cloud security rules
+
+5. Check DNS
+
+If VPN connects but internal websites/resources don't work:
+
+nslookup internal-server
+
+The problem may be related to DNS configuration.
+
+6. Check routes
+
+A VPN can be connected while traffic still fails because the required route is missing or incorrect.
+
+Windows:
+
+route print
+
+Linux:
+
+ip route
+
+7. Check server/network side
+
+For site-to-site VPNs, check:
+
+VPN tunnel status
+Routing
+Firewall rules
+IPsec configuration
+Network address ranges
+VPN gateway configuration
+
+
+What is a VPN?
+
+A VPN is a technology that creates a secure connection over an untrusted network such as the Internet. Organizations use VPNs to provide secure remote access to employees and to connect private networks such as branch offices or on-premises networks with cloud environments. VPNs commonly use encryption, authentication, and technologies such as IPsec to protect communication.
+
