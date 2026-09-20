@@ -1,0 +1,183 @@
+Network Topologies
+1. What is Network Topology?
+
+Network topology describes how devices such as computers, switches, routers, and other network devices are physically or logically connected to each other.
+
+It helps us understand how devices communicate and how the network is organized.
+
+Types of Network Topology
+
+The main topologies are:
+
+Bus
+Star
+Ring
+Mesh
+Hybrid
+
+
+2. Bus Topology
+
+In a Bus topology, all devices are connected to a single main cable called the backbone.
+
+Advantages
+Simple design
+Requires less cable
+Relatively inexpensive
+Easy to set up for small networks
+
+
+
+Disadvantages
+Backbone failure can affect the entire network
+Performance decreases as devices increase
+Troubleshooting can be difficult
+Limited scalability
+Data collisions can occur in traditional shared Ethernet
+
+
+
+Real-World Use
+Bus topology was used in older Ethernet networks, especially networks using coaxial cable.
+
+It is rarely used in modern enterprise networks.
+
+
+
+3. Star Topology ⭐
+
+In a Star topology, every device connects to a central network device, usually a switch
+
+
+Advantages
+Easy to install and manage
+Easy troubleshooting
+Failure of one cable usually affects only one device
+Easy to add or remove devices
+Good scalability
+
+
+Disadvantages
+Failure of the central switch can affect connected devices
+Requires more cable than Bus topology
+Requires a central device
+
+
+Real-World Use ⭐
+Star topology is very common in modern LANs.
+
+For example:
+
+PC ──┐
+Laptop ──┤
+Printer ─┼── Switch ── Router
+Server ──┤
+AP ──────┘
+
+This is one of the most important topologies to understand for IT Support, Networking, AWS Cloud, and DevOps fundamentals.
+
+4. Ring Topology
+
+In a Ring topology, each device is connected to two neighboring devices, forming a closed loop.
+
+
+Data travels around the ring according to the network's design.
+
+Advantages
+Organized data flow
+Can provide predictable access in some implementations
+No central switch is required in the basic topology
+
+
+Disadvantages
+A link/device failure can affect communication in a traditional single-ring design
+Troubleshooting can be difficult
+Adding/removing devices can be more complicated
+Less common in modern LANs
+
+
+Real-World Use
+Ring topology was historically used in technologies such as Token Ring.
+
+Some specialized network technologies can use ring-based designs for redundancy and resilient connectivity, but traditional ring LANs are uncommon today.
+
+5. Mesh Topology
+
+In a Mesh topology, devices have multiple connections with other devices.
+
+Full Mesh
+
+Every device connects directly to every other device.
+
+Partial Mesh
+
+Only some devices have multiple connections.
+
+Advantages
+High redundancy
+Multiple paths are available
+Better fault tolerance
+Failure of one link does not necessarily stop communication
+
+
+Disadvantages
+Expensive
+Requires more cables/connections
+More complex to configure and manage
+Full mesh becomes difficult to scale
+
+
+
+Real-World Use
+Mesh concepts are commonly seen in:
+
+WAN designs
+Wireless mesh networks
+Data-center/network redundancy
+Connections between important network devices
+
+
+
+
+6. Hybrid Topology
+
+A Hybrid topology combines two or more different network topologies.
+
+For example:
+
+Here, multiple star networks are connected together.
+
+Advantages
+Flexible
+Scalable
+Can be designed according to organizational requirements
+Can combine the benefits of different topologies
+
+
+Disadvantages
+More complex
+More expensive
+Requires careful design
+Troubleshooting can be more difficult
+
+
+Real-World Use
+Hybrid topology is common in large enterprise networks, where different network sections are connected using different designs.
+
+
+Physical vs Logical Topology
+
+
+Physical Topology
+
+Describes how devices and cables are physically connected.
+
+Example:
+
+PCs connected to a central switch.
+
+Logical Topology
+
+Describes how data flows between devices, regardless of the physical arrangement.
+
+This distinction is important because a network can have a physical star arrangement while its logical communication behavior is different.
