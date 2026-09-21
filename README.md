@@ -119,7 +119,7 @@ them with **real-world troubleshooting, cloud networking, and DevOps environment
 * APIPA
 * DHCP Troubleshooting
 
----
+
 
 ### 7. Switching
 
@@ -152,8 +152,6 @@ them with **real-world troubleshooting, cloud networking, and DevOps environment
 * Routing Between Networks
 * Router vs Switch
 
----
-
 ### 9. Network Security
 
 * Firewall
@@ -177,6 +175,24 @@ them with **real-world troubleshooting, cloud networking, and DevOps environment
 * IPsec Basics
 * VPN authentication
 * VPN troubleshooting
+
+
+### 11.Network Topologies
+* Bus
+* Star
+* Ring
+* Mesh
+* Hybrid
+* Advantages/disadvantages
+* Real-world use
+
+### 12. Network Media & Transmission
+* Ethernet
+* Fiber optic
+* Copper cable
+* Wireless/Wi-Fi
+* Full duplex vs half duplex
+* Simplex / Half-duplex / Full-duplex
 
 
 ## ☁️ AWS Cloud & DevOps Connection
