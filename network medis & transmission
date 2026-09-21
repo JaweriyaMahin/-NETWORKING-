@@ -1,0 +1,173 @@
+Network Media & Transmission
+1. What is Network Media?
+
+Network media is the physical or wireless medium through which data travels between network devices.
+
+It can be broadly divided into:
+
+Wired / Guided Media → Copper cable, Fiber optic
+Wireless / Unguided Media → Wi-Fi, radio signals
+
+For AWS Cloud & DevOps, understanding the basics is enough because physical network infrastructure is generally managed by the cloud provider.
+
+2. Ethernet ⭐
+
+Ethernet is a widely used networking technology for connecting devices in a LAN (Local Area Network).
+
+It commonly uses copper or fiber cables.
+
+Example:
+
+PC ─── Ethernet Cable ─── Switch
+                              |
+                           Router
+
+Ethernet defines how devices communicate over a wired network, including concepts such as:
+
+MAC addresses
+Ethernet frames
+Speed
+Duplex
+Physical media
+Common Ethernet Speeds
+100 Mbps
+1 Gbps
+10 Gbps
+25/40/100 Gbps and higher in modern data centers
+Real-World Use
+Office LANs
+Data centers
+Servers
+Switch-to-switch connections
+Network infrastructure
+3. Copper Cable ⭐
+
+Copper cables transmit data using electrical signals.
+
+Common Ethernet copper cables include:
+
+Cat5e
+Cat6
+Cat6a
+Cat8
+Advantages
+Relatively inexpensive
+Easy to install
+Commonly used for LAN connections
+Supports Power over Ethernet (PoE) in appropriate implementations
+Disadvantages
+Limited distance compared with fiber
+More susceptible to electromagnetic interference
+Performance depends on cable category and installation quality
+Real-World Use
+PC → Ethernet Cable → Switch
+IP Phone → Ethernet Cable → Switch
+Access Point → Ethernet Cable → Switch
+4. Fiber Optic ⭐
+
+Fiber optic cable transmits data using light signals through optical fiber.
+
+It is commonly used where high bandwidth and long-distance communication are required.
+
+Types
+
+Single-mode fiber (SMF)
+
+Designed for longer distances
+Common in telecom and long-distance infrastructure
+
+Multimode fiber (MMF)
+
+Generally used for shorter distances
+Common in some data-center and building environments
+Advantages
+Very high bandwidth
+Long-distance transmission
+Low electromagnetic interference
+Useful for high-speed network connections
+Disadvantages
+More expensive than basic copper
+Installation and repair can require specialized equipment
+Fiber components can be more delicate
+Real-World Use
+Data centers
+ISP networks
+Telecom networks
+Long-distance links
+High-speed switch-to-switch connections
+5. Wireless / Wi-Fi ⭐
+
+Wi-Fi provides network connectivity using radio signals instead of physical cables.
+
+A device typically connects to a Wireless Access Point (AP).
+
+Laptop )))
+          \
+Mobile ))) → Access Point → Switch → Network
+          /
+Device )))
+Advantages
+Mobility
+No cable required for each client
+Easy to add devices
+Useful for laptops and mobile devices
+Disadvantages
+Signal interference
+Limited range
+Performance can vary with distance and obstacles
+Requires proper wireless security
+Common Wi-Fi Concepts
+SSID
+Access Point
+2.4 GHz
+5 GHz
+6 GHz
+Wi-Fi security such as WPA2/WPA3
+Wireless channels
+6. Simplex, Half-Duplex & Full-Duplex ⭐
+
+These terms describe the direction of communication between two devices.
+
+Simplex
+
+Communication happens in only one direction.
+
+A ─────────→ B
+
+B cannot send data back to A through that communication channel.
+
+Example
+
+Traditional examples include:
+
+Broadcast television
+Radio broadcasting
+Half-Duplex
+
+Communication can happen in both directions, but not simultaneously.
+
+A ─────→ B
+
+A ←───── B
+
+One side communicates at a time.
+
+Example
+Walkie-talkie
+
+When one person speaks, the other waits.
+
+Full-Duplex ⭐
+
+Communication can happen in both directions simultaneously.
+
+A ─────────→ B
+A ←───────── B
+
+Both sides can send and receive at the same time.
+
+Example
+Modern switched Ethernet
+Telephone communication
+
+Network media is the medium through which data travels between network devices. It can be wired, such as copper and fiber optic, or wireless, such as Wi-Fi. Copper uses electrical signals, fiber uses light, and wireless uses radio signals. Transmission can also be simplex, half-duplex, or full-duplex depending on the direction of communication.
