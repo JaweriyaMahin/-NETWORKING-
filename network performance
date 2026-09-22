@@ -2,7 +2,8 @@ Network Performance
 
 Network performance describes how efficiently and reliably data moves through a network.
 
-For AWS Cloud & DevOps, these six concepts are important because they help explain slow applications, poor connectivity, packet drops, and network-related performance issues.
+For AWS Cloud & DevOps, these six concepts are important because they help explain
+slow applications, poor connectivity, packet drops, and network-related performance issues.
 
 1. Bandwidth ⭐
 
@@ -18,9 +19,9 @@ A network connection with 1 Gbps bandwidth has a higher capacity than one with 1
 
 Important
 
-Bandwidth does not mean the actual speed/data being transferred at a particular moment. Actual data transfer can be lower because of latency, congestion, packet loss, protocol overhead, etc.
+Bandwidth does not mean the actual speed/data being transferred at a particular moment.
+Actual data transfer can be lower because of latency, congestion, packet loss, protocol overhead, etc.
 
-Interview:
 
 Bandwidth is the maximum capacity of a network connection to carry data.
 
@@ -53,8 +54,6 @@ APIs
 Cloud applications
 Database communication
 
-Interview:
-
 Latency is the delay experienced while data travels through a network.
 
 3. Throughput ⭐
@@ -67,41 +66,13 @@ Bandwidth vs Throughput
 Bandwidth  = Maximum possible capacity
 Throughput = Actual achieved data transfer
 
-For example, a connection may have high bandwidth but achieve lower throughput because of congestion, packet loss, protocol overhead, or other limitations.
+For example, a connection may have high bandwidth but achieve lower throughput 
+because of congestion, packet loss, protocol overhead, or other limitations.
 
-Interview:
 
 Throughput is the actual rate at which data is successfully transferred over a network.
 
-4. Jitter
-
-Jitter is the variation in packet arrival time.
-
-Ideally, packets should arrive at relatively consistent intervals. If their arrival times vary significantly, jitter is high.
-
-Normal:
-Packet 1 → 10 ms
-Packet 2 → 11 ms
-Packet 3 → 10 ms
-
-High Jitter:
-Packet 1 → 10 ms
-Packet 2 → 50 ms
-Packet 3 → 15 ms
-Why it matters
-
-High jitter can cause problems in real-time applications such as:
-
-Voice calls
-Video conferencing
-Online gaming
-Live streaming
-
-Interview:
-
-Jitter is the variation in the delay between packets arriving at the destination.
-
-5. Packet Loss ⭐
+4. Packet Loss ⭐
 
 Packet loss occurs when packets sent across a network do not successfully reach their destination.
 
@@ -129,13 +100,12 @@ ping <destination>
 
 You can use ping to observe whether packets are being lost between the source and destination.
 
-Interview:
-
 Packet loss occurs when packets fail to reach their intended destination.
 
-6. MTU ⭐
+5. MTU ⭐
 
-MTU (Maximum Transmission Unit) is the largest packet size that can normally be transmitted over a network interface/link without fragmentation at that layer.
+MTU (Maximum Transmission Unit) is the largest packet size that can normally be
+transmitted over a network interface/link without fragmentation at that layer.
 
 For standard Ethernet, a commonly encountered MTU is:
 
@@ -164,7 +134,6 @@ Containers
 Overlay networks
 Network tunnels
 
-Interview:
-
-MTU is the maximum size of a packet that can be transmitted over a network interface without requiring fragmentation at that point.
+MTU is the maximum size of a packet that can be transmitted over a network
+interface without requiring fragmentation at that point.
 
