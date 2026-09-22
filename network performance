@@ -1,0 +1,170 @@
+Network Performance
+
+Network performance describes how efficiently and reliably data moves through a network.
+
+For AWS Cloud & DevOps, these six concepts are important because they help explain slow applications, poor connectivity, packet drops, and network-related performance issues.
+
+1. Bandwidth ⭐
+
+Bandwidth is the maximum data-carrying capacity of a network connection over a given period.
+
+It is usually measured in:
+
+Mbps — Megabits per second
+Gbps — Gigabits per second
+Example
+
+A network connection with 1 Gbps bandwidth has a higher capacity than one with 100 Mbps.
+
+Important
+
+Bandwidth does not mean the actual speed/data being transferred at a particular moment. Actual data transfer can be lower because of latency, congestion, packet loss, protocol overhead, etc.
+
+Interview:
+
+Bandwidth is the maximum capacity of a network connection to carry data.
+
+2. Latency ⭐
+
+Latency is the time taken for data to travel from one point to another.
+
+It is usually measured in milliseconds (ms).
+
+Example
+Client ───────────────→ Server
+        Network delay
+
+If latency is high, applications may feel slow even when bandwidth is high.
+
+Common causes
+Long physical distance
+Network congestion
+Routing path
+Processing delays
+Network device delays
+Real-world impact
+
+High latency can affect:
+
+Remote connections
+Online gaming
+Video calls
+APIs
+Cloud applications
+Database communication
+
+Interview:
+
+Latency is the delay experienced while data travels through a network.
+
+3. Throughput ⭐
+
+Throughput is the actual amount of data successfully transferred through a network over a period of time.
+
+It is usually measured in Mbps or Gbps.
+
+Bandwidth vs Throughput
+Bandwidth  = Maximum possible capacity
+Throughput = Actual achieved data transfer
+
+For example, a connection may have high bandwidth but achieve lower throughput because of congestion, packet loss, protocol overhead, or other limitations.
+
+Interview:
+
+Throughput is the actual rate at which data is successfully transferred over a network.
+
+4. Jitter
+
+Jitter is the variation in packet arrival time.
+
+Ideally, packets should arrive at relatively consistent intervals. If their arrival times vary significantly, jitter is high.
+
+Normal:
+Packet 1 → 10 ms
+Packet 2 → 11 ms
+Packet 3 → 10 ms
+
+High Jitter:
+Packet 1 → 10 ms
+Packet 2 → 50 ms
+Packet 3 → 15 ms
+Why it matters
+
+High jitter can cause problems in real-time applications such as:
+
+Voice calls
+Video conferencing
+Online gaming
+Live streaming
+
+Interview:
+
+Jitter is the variation in the delay between packets arriving at the destination.
+
+5. Packet Loss ⭐
+
+Packet loss occurs when packets sent across a network do not successfully reach their destination.
+
+Packet 1 → Server ✅
+Packet 2 → Server ❌
+Packet 3 → Server ✅
+Common causes
+Network congestion
+Faulty cables
+Wireless interference
+Hardware problems
+Overloaded network devices
+Configuration problems
+Symptoms
+
+Packet loss can cause:
+
+Slow applications
+Connection drops
+Retransmissions
+Poor voice/video quality
+Timeouts
+Basic troubleshooting
+ping <destination>
+
+You can use ping to observe whether packets are being lost between the source and destination.
+
+Interview:
+
+Packet loss occurs when packets fail to reach their intended destination.
+
+6. MTU ⭐
+
+MTU (Maximum Transmission Unit) is the largest packet size that can normally be transmitted over a network interface/link without fragmentation at that layer.
+
+For standard Ethernet, a commonly encountered MTU is:
+
+1500 bytes
+Why MTU matters
+
+If a packet is larger than the supported MTU, depending on the protocol and network configuration, it may need to be:
+
+Fragmented
+Dropped
+Handled through Path MTU Discovery
+
+Incorrect MTU settings can cause connectivity problems, especially when networks involve:
+
+VPNs
+Tunnels
+Encapsulation
+Cloud networking
+AWS/DevOps relevance
+
+MTU issues can sometimes appear in:
+
+VPN connections
+VPC networking
+Containers
+Overlay networks
+Network tunnels
+
+Interview:
+
+MTU is the maximum size of a packet that can be transmitted over a network interface without requiring fragmentation at that point.
+
