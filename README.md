@@ -194,7 +194,15 @@ them with **real-world troubleshooting, cloud networking, and DevOps environment
 * Full duplex vs half duplex
 * Simplex / Half-duplex / Full-duplex
 
+### 13. network performance
+* Network Performance
+* Bandwidth
+* Latency
+* Throughput
+* Packet loss
+* MTU
 
+  
 ## ☁️ AWS Cloud & DevOps Connection
 
 Networking is an important foundation for AWS Cloud and DevOps.
