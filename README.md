@@ -202,7 +202,14 @@ them with **real-world troubleshooting, cloud networking, and DevOps environment
 * Packet loss
 * MTU
 
-  
+### 14. Network Addressing Concepts
+Unicast
+Broadcast
+Multicast
+Anycast basics
+Loopback
+
+
 ## ☁️ AWS Cloud & DevOps Connection
 
 Networking is an important foundation for AWS Cloud and DevOps.
