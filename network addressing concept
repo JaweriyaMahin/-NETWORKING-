@@ -1,0 +1,136 @@
+🌐 Network Addressing Concepts
+
+Network addressing concepts describe how data is addressed and delivered between devices on a network.
+
+For an AWS Cloud & DevOps fresher, you should understand Unicast, Broadcast, Multicast, Anycast, Loopback, and APIPA clearly because they connect with IP addressing, routing, DNS, and troubleshooting.
+
+1. Unicast ⭐
+
+Unicast means one-to-one communication.
+
+One sender sends data to one specific destination.
+
+
+
+When your computer sends an HTTP request to a specific web server, the communication is generally unicast.
+
+Key Point
+
+One sender → One receiver
+
+Used in
+Web communication
+SSH
+RDP
+File transfer
+Most normal client-server communication
+
+2. Broadcast ⭐
+
+Broadcast means one-to-all communication within a broadcast domain.
+
+One device sends data, and all devices in the relevant Layer-2 broadcast domain receive it.
+
+
+
+PC1 sends a broadcast → PC2, PC3, and PC4 receive it.
+
+IPv4 Broadcast
+
+The IPv4 limited broadcast address is:
+
+255.255.255.255
+
+IPv4 can also use subnet-directed broadcast addresses.
+
+Important
+
+Routers normally do not forward ordinary Layer-2 broadcasts between subnets.
+
+Used in
+Some local network discovery processes
+DHCP initial discovery
+Key Point
+
+One sender → All relevant devices in the broadcast domain
+
+3. Multicast ⭐
+
+Multicast means one-to-many communication, but only to devices that have joined a particular multicast group
+
+
+A device that is not a member of the multicast group does not normally receive that multicast traffic.
+
+Example
+
+Multicast can be useful for:
+
+Streaming
+Real-time distribution
+Routing protocols
+Group-based applications
+IPv4 Multicast Range
+224.0.0.0 – 239.255.255.255
+Key Point
+
+One sender → Selected group of receivers
+
+4. Anycast Basics
+
+Anycast means the same IP address is advertised from multiple locations, and network routing directs the client toward an appropriate/usually nearest available instance according to routing decision
+
+
+
+Why Anycast is useful
+Lower latency
+High availability
+Traffic distribution
+Global services
+Real-World Connection
+
+Anycast is commonly used in DNS and globally distributed network services.
+
+AWS Connection
+
+AWS services such as Global Accelerator use Anycast IP addresses to route users toward AWS edge locations.
+
+Key Point
+
+One IP → Multiple possible locations
+
+5. Loopback ⭐
+
+A loopback address is used by a device to communicate with itself.
+
+For IPv4, the loopback range is:
+
+127.0.0.0/8
+
+The most commonly used address is:
+
+127.0.0.1
+
+This is commonly called localhost.
+
+Example
+ping 127.0.0.1
+
+This tests the local TCP/IP stack without sending traffic to another device.
+
+IPv6
+
+IPv6 loopback:
+
+::1
+Why useful?
+
+Loopback is useful for:
+
+Testing the local network stack
+Running local applications
+Development
+Troubleshooting
+Key Point
+
+Loopback = Device communicating with itself
+
