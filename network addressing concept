@@ -2,9 +2,10 @@
 
 Network addressing concepts describe how data is addressed and delivered between devices on a network.
 
-For an AWS Cloud & DevOps fresher, you should understand Unicast, Broadcast, Multicast, Anycast, Loopback, and APIPA clearly because they connect with IP addressing, routing, DNS, and troubleshooting.
+For an AWS Cloud & DevOps fresher, you should understand Unicast, 
+Broadcast, Multicast, Anycast, Loopback, and clearly because they connect with IP addressing, routing, DNS, and troubleshooting.
 
-1. Unicast ⭐
+1. Unicast 
 
 Unicast means one-to-one communication.
 
@@ -25,7 +26,7 @@ RDP
 File transfer
 Most normal client-server communication
 
-2. Broadcast ⭐
+2. Broadcast 
 
 Broadcast means one-to-all communication within a broadcast domain.
 
@@ -54,7 +55,7 @@ Key Point
 
 One sender → All relevant devices in the broadcast domain
 
-3. Multicast ⭐
+3. Multicast 
 
 Multicast means one-to-many communication, but only to devices that have joined a particular multicast group
 
@@ -98,7 +99,7 @@ Key Point
 
 One IP → Multiple possible locations
 
-5. Loopback ⭐
+5. Loopback 
 
 A loopback address is used by a device to communicate with itself.
 
