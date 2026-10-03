@@ -203,11 +203,11 @@ them with **real-world troubleshooting, cloud networking, and DevOps environment
 * MTU
 
 ### 14. Network Addressing Concepts
-Unicast
-Broadcast
-Multicast
-Anycast basics
-Loopback
+*Unicast
+*Broadcast
+*Multicast
+*Anycast basics
+*Loopback
 
 
 ## ☁️ AWS Cloud & DevOps Connection
