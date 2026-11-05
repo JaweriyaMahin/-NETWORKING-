@@ -230,7 +230,8 @@ These concepts are especially useful for understanding:
 * VPN Connectivity
 * Cloud-based troubleshooting
 
-The purpose is to understand **how applications, servers, networks, and cloud services communicate with each other**.
+The purpose is to understand **how applications, servers, networks, and 
+cloud services communicate with each other**.
 
 
 This repository will be updated as I continue learning Networking
