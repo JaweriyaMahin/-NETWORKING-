@@ -30,7 +30,7 @@ them with **real-world troubleshooting, cloud networking, and DevOps environment
 
 ---
 
-### 2. OSI & TCP/IP Models ⭐
+### 2. OSI & TCP/IP Models 
 
 * 7 OSI Layers
 * Functions of Every Layer
@@ -40,9 +40,8 @@ them with **real-world troubleshooting, cloud networking, and DevOps environment
 * OSI vs TCP/IP
 * Troubleshooting Using OSI Layers
 
----
 
-### 3. IP Addressing ⭐
+### 3. IP Addressing 
 
 * IPv4
 * IPv6
@@ -58,9 +57,8 @@ them with **real-world troubleshooting, cloud networking, and DevOps environment
 * Loopback IP
 * APIPA
 
----
 
-### 4. Important Network Protocols ⭐
+### 4. Important Network Protocols 
 
 * TCP
 * UDP
@@ -80,7 +78,7 @@ them with **real-world troubleshooting, cloud networking, and DevOps environment
 
 ---
 
-### 5. DNS ⭐
+### 5. DNS 
 
 * What is DNS?
 * Why DNS is Required
@@ -104,7 +102,7 @@ them with **real-world troubleshooting, cloud networking, and DevOps environment
 
 ---
 
-### 6. DHCP ⭐
+### 6. DHCP 
 
 * Why DHCP?
 * DORA Process
@@ -139,7 +137,7 @@ them with **real-world troubleshooting, cloud networking, and DevOps environment
 
 ---
 
-### 8. Routing ⭐
+### 8. Routing 
 
 * What is Routing?
 * Router Working
